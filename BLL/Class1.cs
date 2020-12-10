@@ -7,5 +7,7 @@ namespace BLL
 	class Class1
 	{
 		public int MyProperty { get; set; }
-	}
+
+        public int i { get; set; }
+    }
 }
