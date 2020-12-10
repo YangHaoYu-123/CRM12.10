@@ -1,0 +1,49 @@
+﻿<br />
+<br />
+<h2 align="center">公司信息列表</h2>
+<br />
+<br />
+
+<!--表格行内样式-->
+<script type="text/html" id="barDemo">
+    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">查看</a>
+    <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+</script>
+
+<!--表格-->
+<table class="layui-hide" id="position" lay-filter="position">
+</table>
+
+
+
+<script>
+    $(function () {
+        layui.use('table', function () {
+            var table = layui.table;
+            //第一个实例
+            table.render({
+                elem: '#position'
+                , height:650
+                , url: 'http://localhost:63453/api/GetShow' //数据接口
+                , page: true //开启分页
+                , title: '会员列表'
+                , toolbar: true
+                , totalRow: true //开启合计行
+                , cols: [[ //表头
+                      { type: 'checkbox', fixed: 'left', title: "全选"  }
+                    , { field: 'xId', title: '编号', width: 139, sort: true, fixed: 'left' }
+                    , { field: 'gName', title: '公司名称', width: 201 }
+                    , { field: 'gJiBie', title: '公司级别', width: 170, sort: true }
+                    , { field: 'gDiZhi', title: '地址', width: 247 }
+                    , { field: 'xJingBanRen', title: '经办人', width: 189 }
+                    , { field: 'lName', title: '联系人', width: 189, sort: true }
+                    , { field: 'xsz', title: '审核状态', width: 205, sort: true }
+                    , { field: "opt", width: 190, title: "操作", templet: "#barDemo" }
+                ]]
+                , page: true
+            });
+        });
+    })
+</script>
+

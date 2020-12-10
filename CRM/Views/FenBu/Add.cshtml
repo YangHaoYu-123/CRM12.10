@@ -274,7 +274,7 @@
         </div>
     </form>
     <script>
-        //渲染全部
+        //渲染全部表单
         layui.use('form', function () {
             var forma = layui.form;
             forma.render();
@@ -300,8 +300,6 @@
                 }
             });
         })
-        
-        
         function Getfang() {
             $.ajax({
                 url: "http://localhost:63453/api/Getfang",

@@ -18,8 +18,8 @@ namespace Model
         public int XCJId { get; set; }
         public int XCFId { get; set; }
         public int XCTId { get; set; }
-        public int XFQ { get; set; }
-        public int XSZ { get; set; }
+        public string XFQ { get; set; }
+        public string XSZ { get; set; }
         public int XGZId { get; set; }
         public int XJieDuanId { get; set; }
 
@@ -27,5 +27,16 @@ namespace Model
         public string BeiZhu { get; set; }
         public string LName { get; set; }
         public string LPhone { get; set; }
+
+
+        //公司表
+        public string GName { get; set; }
+        public string GDiZhi { get; set; }
+        public string GBianMa { get; set; }
+        public string GPhone { get; set; }
+        public int GSanJiId { get; set; }
+        public string GJiBie { get; set; }
+        public string GDengJi { get; set; }
+        public string GQuYu { get; set; }
     }
 }
