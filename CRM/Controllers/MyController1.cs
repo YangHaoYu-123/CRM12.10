@@ -150,6 +150,16 @@ namespace CRM.Controllers
         }
 
 
-        
+
+        //显示
+        [Microsoft.AspNetCore.Mvc.HttpGet]
+        [Microsoft.AspNetCore.Mvc.Route("api/GetShow")]
+        public IActionResult GetShow()
+        {
+            var list = bLL.Show<XinXiTable>("select * from XinXiTable x join GongSiTable g on x.XGId=g.GId");
+            return Ok(new { code = 0, msg = "", count = 1000, data = list });
+        }
+
+
     }
 }

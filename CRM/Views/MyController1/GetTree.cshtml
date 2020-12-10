@@ -85,7 +85,7 @@
                     //拼接父级
                     $(json).each(function (i, n) {
                         html += "<li class='layui-nav-item'> ";
-                        html += "<a class='' href='javascript:;'>" + n.ShuName + "</a>";
+                        html += "<a href='javascript:ShowTable(\"" + n.Url + "\")'>" + n.ShuName + "</a>";
                         //拼接子级
                         $(n.ZiJi).each(function (j, k) {
                             html += "<dl class='layui-nav-child'>";
