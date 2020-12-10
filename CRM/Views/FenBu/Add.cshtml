@@ -1,0 +1,405 @@
+﻿
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Layui</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="~/layui/css/layui.css" media="all">
+    <script src="~/layui/area.js"></script>
+    <script src="~/layui/jquery.min.js"></script>
+    <script src="~/layui/select.js"></script>
+    <!-- 注意：如果你直接复制所有代码到本地，上述css路径需要改成你本地的 -->
+</head>
+<body>
+    <style>
+        .aa {
+            color: red;
+        }
+
+        .layui-form-item .layui-input-inline {
+            width: 380px;
+        }
+
+        .layui-form-label {
+            width: 90px;
+        }
+    </style>
+
+    <form class="layui-form" action="">
+        <h2 align="center">添加公司信息</h2>
+        <br />
+        <br />
+        <br />
+        <h3>&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;基本信息</h3>
+        <hr class="layui-bg-gray">
+        <div class="layui-form-item">
+            <label class="layui-form-label">公司名称:</label>
+            <div class="layui-input-inline">
+                <input type="text" id="gname" name="title" required lay-verify="required" placeholder="请输入公司名称" autocomplete="off" class="layui-input">
+            </div>
+            <div class="layui-input-inline" style="width:60px">
+                <button type="button" id="chaxun" class="layui-btn layui-btn-warm">查询</button>
+            </div>
+            <div class="layui-input-inline">
+                <span class="aa" style="width:100px">*</span>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">公司地址:</label>
+            <div class="layui-input-inline">
+                <input type="text" name="title" id="dizhi" required lay-verify="required" placeholder="请输入公司地址" autocomplete="off" class="layui-input">
+            </div>
+
+            <div class="layui-input-inline">
+                <span class="aa">*</span>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">联系人:</label>
+            <div class="layui-input-inline">
+                <input type="text" name="title" required lay-verify="required" placeholder="请输入联系人" autocomplete="off" class="layui-input">
+            </div>
+            <div class="layui-input-inline">
+                <span class="aa">*</span>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">手机:</label>
+            <div class="layui-input-inline">
+                <input type="text" name="title" required lay-verify="required" placeholder="请输入手机号" autocomplete="off" class="layui-input">
+            </div>
+            <div class="layui-input-inline">
+                <span class="aa">*</span>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">电话:</label>
+            <div class="layui-input-inline">
+                <input type="text" name="title" required lay-verify="required" placeholder="请输入公司电话" autocomplete="off" class="layui-input">
+            </div>
+            <div class="layui-input-inline">
+                <span class="aa">*</span>
+            </div>
+
+
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">地区:</label>
+            <div class="layui-inline">
+                <select name="province" id="province" lay-verify="required" lay-search lay-filter="province">
+                    <option value="">省份</option>
+                </select>
+            </div>
+            <div class="layui-inline">
+                <select name="city" id="city" lay-verify="required" lay-search lay-filter="city">
+                    <option value="">地级市</option>
+                </select>
+            </div>
+            <div class="layui-inline">
+                <select name="district" id="district" lay-verify="required" lay-search>
+                    <option value="">县/区</option>
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">邮编:</label>
+            <div class="layui-input-block">
+                <input type="text" name="title" required lay-verify="required" placeholder="请输入邮编" autocomplete="off" class="layui-input" style="width:300px;">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">重要级别:</label>
+            <div class="layui-input-inline">
+                <select lay-filter="aihao">
+                    <option value="0">一般</option>
+                    <option value="1">重要</option>
+                    <option value="2">很重要</option>
+                    <option value="3">非常重要</option>
+                </select>
+            </div>
+            <div class="layui-input-inline">
+                <span class="aa">*</span>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">单位等级:</label>
+            <div class="layui-input-inline">
+                <select lay-filter="aihao">
+                    <option value="0">一级</option>
+                    <option value="1">二级</option>
+                    <option value="2">三级</option>
+                    <option value="3">四级</option>
+                </select>
+            </div>
+            <div class="layui-input-inline">
+                <span class="aa">*</span>
+            </div>
+
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">区域等级:</label>
+            <div class="layui-input-inline">
+                <select lay-filter="aihao">
+                    <option value="0">省级</option>
+                    <option value="1">市级</option>
+                    <option value="2">区级</option>
+                    <option value="3">县级</option>
+                </select>
+            </div>
+            <div class="layui-input-inline">
+                <span class="aa">*</span>
+            </div>
+        </div>
+
+        <h3>&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;其他信息</h3>
+        <hr class="layui-bg-gray">
+        <div class="layui-form-item">
+            <label class="layui-form-label">经办人:</label>
+            <div class="layui-input-inline">
+                <input type="text" name="XJingBanRen" lay-verify="required" autocomplete="off" class="layui-input">
+            </div>
+            <div class="layui-input-inline">
+                <span class="aa">*</span>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">年费:</label>
+            <div class="layui-input-inline">
+                <input type="text" name="XNianFei" lay-verify="required" autocomplete="off" class="layui-input">
+            </div>
+            <div class="layui-input-inline">
+                <span>万</span>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">电子资源经费:</label>
+            <div class="layui-input-inline">
+                <input type="text" name="XDZJingFei" lay-verify="required" autocomplete="off" class="layui-input">
+            </div>
+            <div class="layui-input-inline">
+                <span>万</span>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">采购时间:</label>
+            <div class="layui-input-inline">
+                <input type="date" lay-verify="required" placeholder="输入日期" autocomplete="off" class="layui-input">
+            </div>
+            <div class="layui-input-inline">
+                <span class="aa">*</span>
+            </div>
+        </div>
+        <div class="layui-form-item" id="jb">
+            <label class="layui-form-label">采购级别:</label>
+            <div class="layui-input-inline" id="jc">
+                <select lay-filter="aihao" id="CJiBie">
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">采购方式:</label>
+            <div class="layui-input-inline">
+                <select lay-filter="aihao" id="CFangShi">
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">采购途径:</label>
+            <div class="layui-input-inline">
+                <select lay-filter="aihao" id="CTuJing">
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">分配情况:</label>
+            <div class="layui-input-inline">
+                <select lay-filter="aihao" id="FenPei">
+                    <option value="0">未分配</option>
+                    <option value="1">已分配</option>
+                </select>
+            </div>
+            <div class="layui-input-inline">
+                <span class="aa">*</span>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">审核状态:</label>
+            <div class="layui-input-inline">
+                <select name="XSZId" lay-filter="XSZId" id="ShenZ">
+                    <option value="0">未审核</option>
+                    <option value="1">审核中</option>
+                    <option value="2">已审核</option>
+                </select>
+            </div>
+            <div class="layui-input-inline">
+                <span class="aa">*</span>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">跟进状态:</label>
+            <div class="layui-input-inline">
+                <select lay-filter="aihao" id="GenZ">
+                </select>
+            </div>
+            <div class="layui-input-inline">
+                <span class="aa">*</span>
+            </div>
+        </div>
+        <div class="layui-form-item layui-form-text">
+            <label class="layui-form-label">备注信息:</label>
+            <div class="layui-input-inline">
+                <textarea placeholder="请输入内容" class="layui-textarea"></textarea>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;
+                &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;
+                &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;
+
+                <button class="layui-btn" lay-submit lay-filter="formDemo" id="btntj">立即提交</button>
+                &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;
+
+                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+            </div>
+        </div>
+    </form>
+    <script>
+        //渲染全部
+        layui.use('form', function () {
+            var forma = layui.form;
+            forma.render();
+        });
+    </script>
+
+    <script>
+        //传分布视图Html
+        $(function () {
+            $("#showPage").html($("#pages").html());
+            $.ajax({
+                url: "http://localhost:63453/api/Getjibie",
+                dataType: "json",
+                type: "get",
+                success: function (result) {
+                    Getfang();
+                    var jibie = "";
+                    $(result).each(function (i, n) {
+                        jibie += "<option value='" + n.cJId + "'>" + n.cName + "</option>";
+                    });
+                    $("#CJiBie").empty();
+                    $("#CJiBie").append(jibie);
+                }
+            });
+        })
+        
+        
+        function Getfang() {
+            $.ajax({
+                url: "http://localhost:63453/api/Getfang",
+                dataType: "json",
+                type: "get",
+                success: function (result) {
+                    GetTujing();
+                    var fangs = "";
+                    $("#CFangShi").empty();
+                    $(result).each(function (i, n) {
+                        fangs += "<option value='" + n.cfId + "'>" + n.cfName + "</option>";
+                    });
+                    $("#CFangShi").append(fangs);
+
+                }
+            });
+        }
+        function GetTujing() {
+            $.ajax({
+                url: "http://localhost:63453/api/GetTujing",
+                dataType: "json",
+                type: "get",
+                success: function (result) {
+                    getgenjin();
+                    var tujing = "";
+                    $("#CTuJing").empty();
+                    $(result).each(function (i, n) {
+                        tujing += "<option value='" + n.ctId + "'>" + n.ctName + "</option>";
+                    });
+                    $("#CTuJing").append(tujing);
+
+                }
+            });
+        }
+        function getgenjin() {
+            $.ajax({
+                url: "http://localhost:63453/api/getgenjin",
+                dataType: "json",
+                type: "get",
+                success: function (result) {
+                    var genz = "";
+                    $("#GenZ").empty();
+                    $(result).each(function (i, n) {
+                        genz += "<option value='" + n.gzId + "'>" + n.gzName + "</option>";
+                    });
+                    $("#GenZ").append(genz);
+                }
+            });
+        }
+    </script>
+    
+
+    <script>
+        //查询按钮点击事件
+        $("#chaxun").click(function () {
+            //获取值
+            var name = $("#gname").val();
+            $.ajax({
+                url: "http://localhost:63453/api/GongSiTable",
+                data: { name: name },
+                type: "get",
+                dataType: "json",
+                success: function (d) {
+                    $("#gname").val(d.gName);
+                }
+            })
+        })
+
+
+        //添加按钮点击事件
+        //$("#btntj").click(function () {
+        //    var model = {};
+        //    model.GName = $("#gname").val();
+        //    model.GDiZhi = $("#dizhi").val();
+        //    model.LName = $("#")
+
+
+
+
+        //    $.ajax({
+        //        url: "",
+        //        data: "",
+        //        type: "post",
+        //        dataType: "json",
+        //        success: function (f) {
+        //            if (f > 0) {
+        //                alert("添加成功");
+        //            }
+        //            else {
+        //                alert("添加失败");
+        //            }
+        //        }
+        //    })
+        //})
+
+    </script>
+</body>
+</html>
+
+
+
